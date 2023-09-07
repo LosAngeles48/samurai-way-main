@@ -1,6 +1,6 @@
 .app-wrapper {
   display: grid;
-  width: 1200px;
+  width: 1600px;
   grid-template-areas:
   'h h'
   'n c';
@@ -15,7 +15,7 @@
 
 }
 .header img {
-  width: 40px;
+  width: 100px;
 }
 
 .nav {
@@ -31,5 +31,7 @@
 }
 
 .content img {
-  width: 500px;
+  width: 800px;
+  height: 300px;
+
 }
