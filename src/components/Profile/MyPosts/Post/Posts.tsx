@@ -1,17 +1,19 @@
 import React from 'react';
 import s from './Posts.module.css';
 
-type PostsPropsType = {
+type PropsType = {
     message: string
+    likesCount: string
+
 }
 
-export const Posts = (props: PostsPropsType) => {
+export const Posts = (props: PropsType) => {
     return (
         <div className={s.item}>
-            <img src="https://yt3.googleusercontent.com/-CFTJHU7fEWb7BYEb6Jh9gm1EpetvVGQqtof0Rbh-VQRIznYYKJxCaqv_9HeBcmJmIsp2vOO9JU=s900-c-k-c0x00ffffff-no-rj" className={s.item}/>
+            <img src="https://yt3.googleusercontent.com/-CFTJHU7fEWb7BYEb6Jh9gm1EpetvVGQqtof0Rbh-VQRIznYYKJxCaqv_9HeBcmJmIsp2vOO9JU=s900-c-k-c0x00ffffff-no-rj" />
             {props.message}
             <div>
-                <span>like</span>
+                <span>Like </span> {props.likesCount}
             </div>
         </div>
 )
