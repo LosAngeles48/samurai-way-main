@@ -5,51 +5,21 @@ import {Navbar} from './components/Navbar/Navbar';
 import {Profile} from './components/Profile/Profile';
 import {Dialogs} from './components/Dialogs/Dialogs';
 import {BrowserRouter, Route} from 'react-router-dom';
+import {RootStateType} from './index';
 
-type messagesType = {
-    id: number
-    messages: string
+type AppStateType = {
+    state:RootStateType
 }
 
-type DialogType = {
-    id:number
-    name:string
-   
-}
-
-type PostType = {
-    id:number
-    messages:string
-    likesCount: number
-}
-
-type ProfilePageType = {
-    posts: Array<PostType>
-}
-
-type DialogPageType = {
-    dialogs: Array<DialogType>
-    messages: Array<messagesType>
-}
-
-type RootStateType = {
-    profilePage: ProfilePageType
-    dialogsPage: DialogPageType
-    posts:Array<PostType>
-    dialogs: Array<DialogType>
-
-}
-
-
- const App = (props:RootStateType) => {
+ const App = (props:AppStateType) => {
     return (
         <BrowserRouter>
             <div className="app-wrapper">
                 <Header/>
                 <Navbar/>
                 <div className="app-wrapper-content">
-                    <Route path="/profile" render={() => <Profile posts={props.posts} />}/>
-                    <Route path="/dialogs" render={() => <Dialogs dialogs={props.dialogs} messages={props.dialogsPage.messages}/>}/>
+                    <Route path="/profile" render={() => <Profile posts={props.state.profilePage.posts} />}/>
+                    <Route path="/dialogs" render={() => <Dialogs dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages}/>}/>
                 </div>
             </div>
         </BrowserRouter>

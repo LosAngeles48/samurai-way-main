@@ -2,36 +2,36 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import dialogs from './components/Dialogs/Dialogs';
 
-type messagesType = {
+
+export type messagesType = {
     id: number
     messages: string
 }
 
-type DialogType = {
+export type DialogType = {
     id:number
     name:string
 }
 
-type PostType = {
+export type PostType = {
     id:number
     messages:string
     likesCount: number
 }
 
-type ProfilePageType = {
+export type ProfilePageType = {
     posts: Array<PostType>
 }
 
-type DialogPageType = {
+export type DialogPageType = {
     dialogs: Array<DialogType>
     messages: Array<messagesType>
 }
 
-type SidebarType = {}
+export type SidebarType = {}
 
-type RootStateType = {
+export type RootStateType = {
     profilePage: ProfilePageType
     dialogsPage: DialogPageType
     // sidebar: SidebarType
@@ -62,7 +62,11 @@ export let state: RootStateType = {
 }
 
 ReactDOM.render(
-    <App posts={state.profilePage.posts} dialogs={state.dialogsPage.dialogs} messages={state.dialogsPage.messages}/>,
+    <App state={state}/>,
     document.getElementById('root')
 );
 
+
+
+
+// posts={state.profilePage.posts} dialogs={state.dialogsPage.dialogs} messages={state.dialogsPage.messages}

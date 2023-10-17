@@ -2,20 +2,8 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogsItem';
+import {DialogPageType} from '../../index';
 
-type messagesType = {
-    id: number
-    messages: string
-}
-
-type DialogType = {
-    id:number
-    name:string
-}
-type DialogPageType = {
-    dialogs: Array<DialogType>
-    messages: Array<messagesType>
-}
 
 export const Dialogs = (props:DialogPageType) => {
 
