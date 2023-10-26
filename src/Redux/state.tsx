@@ -56,7 +56,8 @@ export let state: RootStateType = {
             {id: 3, name: 'Valera'},
             {id: 4, name: 'Ksenia'}
         ],
-    }
+    },
+    // sidebar: {}
 }
 
 

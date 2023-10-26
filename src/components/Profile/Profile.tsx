@@ -12,6 +12,7 @@ export type ProfilePropsType = {
 
 
     return (
+
         <div>
             <ProfileInfo/>
             <MyPosts posts={props.profilePage.posts} />
