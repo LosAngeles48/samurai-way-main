@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import s from './Dialogs.module.css';
 import Message from './Message/Message';
 import DialogItem from './DialogItem/DialogsItem';
@@ -17,6 +17,16 @@ export const Dialogs = (props:DialogsPropsType) => {
 
     let messagesElements = props.dialogsPage.messages.map(m => <Message text={m.messages}/>)
 
+
+
+    let newMessage = useRef<HTMLTextAreaElement>(null)
+
+    const sendMessage = () => {
+        if (newMessage.current !== null) {
+            alert(newMessage.current.value)
+        }
+    }
+
     return (
 
         <div className={s.dialogs}>
@@ -26,6 +36,12 @@ export const Dialogs = (props:DialogsPropsType) => {
 
             <div className={s.messages}>
                 {messagesElements}
+            </div>
+            <div>
+                <textarea ref={newMessage}></textarea>
+            </div>
+            <div>
+                <button onClick={sendMessage}>Send</button>
             </div>
         </div>
     )
